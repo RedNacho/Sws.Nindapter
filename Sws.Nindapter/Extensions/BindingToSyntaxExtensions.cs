@@ -21,7 +21,8 @@ namespace Sws.Nindapter.Extensions
                 throw new ArgumentNullException("adapterFactory");
             }
 
-            return new AdaptedBindingBuilder<TAdaptee, T>(bindingToSyntax.BindingConfiguration, bindingToSyntax.Kernel, typeof(T).Format(), adapterFactory);
+            return new AdaptedBindingBuilder<TAdaptee, T>(bindingToSyntax.BindingConfiguration, bindingToSyntax.Kernel, typeof(T).Format(), adapterFactory,
+                new AdapterProviderFactory());
         }
 
     }

@@ -16,7 +16,9 @@ namespace Sws.Nindapter
 
         private readonly Func<TAdaptee, TAdapted> _adapterFactory;
 
-        public AdaptedBindingBuilder(IBindingConfiguration bindingConfiguration, IKernel kernel, string serviceNames, Func<TAdaptee, TAdapted> adapterFactory)
+        private readonly IAdapterProviderFactory _adapterProviderFactory;
+
+        public AdaptedBindingBuilder(IBindingConfiguration bindingConfiguration, IKernel kernel, string serviceNames, Func<TAdaptee, TAdapted> adapterFactory, IAdapterProviderFactory adapterProviderFactory)
             : base(bindingConfiguration, kernel, serviceNames)
         {
             if (adapterFactory == null)
@@ -24,7 +26,14 @@ namespace Sws.Nindapter
                 throw new ArgumentNullException("adapterFactory");
             }
 
+            if (adapterProviderFactory == null)
+            {
+                throw new ArgumentNullException("adapterProviderFactory");
+            }
+
             _adapterFactory = adapterFactory;
+
+            _adapterProviderFactory = adapterProviderFactory;
         }
 
         public IBindingWhenInNamedWithOrOnSyntax<TAdaptee> To(Type implementation)
@@ -107,7 +116,7 @@ namespace Sws.Nindapter
             var providerCallback = bindingConfiguration.ProviderCallback;
 
             bindingConfiguration.ProviderCallback = context =>
-                new AdapterProvider<TAdaptee, TAdapted>(providerCallback(context), _adapterFactory);
+                _adapterProviderFactory.CreateAdapterProvider(providerCallback(context), _adapterFactory);
         }
 
         private IBindingWhenInNamedWithOrOnSyntax<TImplementation> GetWhenInNamedWithOrOnSyntax<TImplementation>()

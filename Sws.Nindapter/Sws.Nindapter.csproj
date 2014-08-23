@@ -47,7 +47,9 @@
   <ItemGroup>
     <Compile Include="AdaptedBindingBuilder.cs" />
     <Compile Include="AdapterProvider.cs" />
+    <Compile Include="AdapterProviderFactory.cs" />
     <Compile Include="Extensions\BindingToSyntaxExtensions.cs" />
+    <Compile Include="IAdapterProviderFactory.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
