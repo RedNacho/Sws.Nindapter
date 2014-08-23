@@ -1,0 +1,71 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sws.Nindapter", "Sws.Nindapter\Sws.Nindapter.csproj", "{63779814-8E5E-414C-8DB8-23A4A0F3AD66}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sws.Nindapter.Tests", "Sws.Nindapter.Tests\Sws.Nindapter.Tests.csproj", "{1DFD985C-E8A8-4129-9B99-89E6F581D0DD}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{F2C921F0-ECC6-4FE3-A012-155D8B2B6A8C}"
+	ProjectSection(SolutionItems) = preProject
+		Local.testsettings = Local.testsettings
+		Sws.Nindapter.vsmdi = Sws.Nindapter.vsmdi
+		TraceAndTestImpact.testsettings = TraceAndTestImpact.testsettings
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{5F74CB15-4FCC-4084-BDB1-07A4CE4D44A4}"
+	ProjectSection(SolutionItems) = preProject
+		.nuget\NuGet.Config = .nuget\NuGet.Config
+		.nuget\NuGet.exe = .nuget\NuGet.exe
+		.nuget\NuGet.targets = .nuget\NuGet.targets
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sws.Nindapter.Demo", "Sws.Nindapter.Demo\Sws.Nindapter.Demo.csproj", "{12DDA3A2-680C-421C-BC11-ED9486FC5473}"
+EndProject
+Global
+	GlobalSection(TestCaseManagementSettings) = postSolution
+		CategoryFile = Sws.Nindapter.vsmdi
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Debug|Mixed Platforms = Debug|Mixed Platforms
+		Debug|x86 = Debug|x86
+		Release|Any CPU = Release|Any CPU
+		Release|Mixed Platforms = Release|Mixed Platforms
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{63779814-8E5E-414C-8DB8-23A4A0F3AD66}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{63779814-8E5E-414C-8DB8-23A4A0F3AD66}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{63779814-8E5E-414C-8DB8-23A4A0F3AD66}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{63779814-8E5E-414C-8DB8-23A4A0F3AD66}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{63779814-8E5E-414C-8DB8-23A4A0F3AD66}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{63779814-8E5E-414C-8DB8-23A4A0F3AD66}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{63779814-8E5E-414C-8DB8-23A4A0F3AD66}.Release|Any CPU.Build.0 = Release|Any CPU
+		{63779814-8E5E-414C-8DB8-23A4A0F3AD66}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{63779814-8E5E-414C-8DB8-23A4A0F3AD66}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{63779814-8E5E-414C-8DB8-23A4A0F3AD66}.Release|x86.ActiveCfg = Release|Any CPU
+		{1DFD985C-E8A8-4129-9B99-89E6F581D0DD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1DFD985C-E8A8-4129-9B99-89E6F581D0DD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1DFD985C-E8A8-4129-9B99-89E6F581D0DD}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{1DFD985C-E8A8-4129-9B99-89E6F581D0DD}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{1DFD985C-E8A8-4129-9B99-89E6F581D0DD}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{1DFD985C-E8A8-4129-9B99-89E6F581D0DD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1DFD985C-E8A8-4129-9B99-89E6F581D0DD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1DFD985C-E8A8-4129-9B99-89E6F581D0DD}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{1DFD985C-E8A8-4129-9B99-89E6F581D0DD}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{1DFD985C-E8A8-4129-9B99-89E6F581D0DD}.Release|x86.ActiveCfg = Release|Any CPU
+		{12DDA3A2-680C-421C-BC11-ED9486FC5473}.Debug|Any CPU.ActiveCfg = Debug|x86
+		{12DDA3A2-680C-421C-BC11-ED9486FC5473}.Debug|Mixed Platforms.ActiveCfg = Debug|x86
+		{12DDA3A2-680C-421C-BC11-ED9486FC5473}.Debug|Mixed Platforms.Build.0 = Debug|x86
+		{12DDA3A2-680C-421C-BC11-ED9486FC5473}.Debug|x86.ActiveCfg = Debug|x86
+		{12DDA3A2-680C-421C-BC11-ED9486FC5473}.Debug|x86.Build.0 = Debug|x86
+		{12DDA3A2-680C-421C-BC11-ED9486FC5473}.Release|Any CPU.ActiveCfg = Release|x86
+		{12DDA3A2-680C-421C-BC11-ED9486FC5473}.Release|Mixed Platforms.ActiveCfg = Release|x86
+		{12DDA3A2-680C-421C-BC11-ED9486FC5473}.Release|Mixed Platforms.Build.0 = Release|x86
+		{12DDA3A2-680C-421C-BC11-ED9486FC5473}.Release|x86.ActiveCfg = Release|x86
+		{12DDA3A2-680C-421C-BC11-ED9486FC5473}.Release|x86.Build.0 = Release|x86
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
