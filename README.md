@@ -10,7 +10,7 @@ Usage:
 
 e.g.
 
-kernel.Bind<string>().ThroughAdapter(int i => i.ToString()).ToConstant(42);
+kernel.Bind<string>().ThroughAdapter((int i) => i.ToString()).ToConstant(42);
 
 There is also a ThroughDecorator extension method, which is identical to ThroughAdapter except that the adaptee must be the same type as the adapter (i.e. you want to modify or wrap the bound class, but you don't need to change its interface).
 
