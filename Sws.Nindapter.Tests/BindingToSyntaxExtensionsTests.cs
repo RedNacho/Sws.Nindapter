@@ -183,5 +183,44 @@ namespace Sws.Nindapter.Tests
             adapted.AdaptedValue.Should().Be("Adapted Adaptee Value");
         }
 
+        [TestMethod]
+        public void ThroughAdapterToServiceWithGenericTypeParamInvokesAdapterWhenBound()
+        {
+            var kernel = new StandardKernel();
+
+            kernel.Bind<IAdaptee>().To<Adaptee>();
+            kernel.Bind<IAdapted>().ThroughAdapter((IAdaptee adaptee) => new Adapter(adaptee)).ToService<IAdaptee>();
+
+            var adapted = kernel.Get<IAdapted>();
+
+            adapted.AdaptedValue.Should().Be("Adapted Adaptee Value");
+        }
+
+        [TestMethod]
+        public void ThroughAdapterToServiceWithoutGenericTypeParamAndWithServiceTypeArgumentInvokesAdapterWhenBound()
+        {
+            var kernel = new StandardKernel();
+
+            kernel.Bind<IAdaptee>().To<Adaptee>();
+            kernel.Bind<IAdapted>().ThroughAdapter((IAdaptee adaptee) => new Adapter(adaptee)).ToService(typeof(IAdaptee));
+
+            var adapted = kernel.Get<IAdapted>();
+
+            adapted.AdaptedValue.Should().Be("Adapted Adaptee Value");
+        }
+
+        [TestMethod]
+        public void ThroughAdapterToServiceWithoutGenericTypeParamAndWithoutServiceTypeArgumentInvokesAdapterWhenBound()
+        {
+            var kernel = new StandardKernel();
+
+            kernel.Bind<IAdaptee>().To<Adaptee>();
+            kernel.Bind<IAdapted>().ThroughAdapter((IAdaptee adaptee) => new Adapter(adaptee)).ToService();
+
+            var adapted = kernel.Get<IAdapted>();
+
+            adapted.AdaptedValue.Should().Be("Adapted Adaptee Value");
+        }
+
     }
 }
