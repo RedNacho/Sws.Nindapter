@@ -49,7 +49,9 @@
     <Compile Include="AdapterProvider.cs" />
     <Compile Include="AdapterProviderFactory.cs" />
     <Compile Include="Extensions\BindingToSyntaxExtensions.cs" />
+    <Compile Include="IAdaptedBindingToSyntax.cs" />
     <Compile Include="IAdapterProviderFactory.cs" />
+    <Compile Include="NindapterServiceContainer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

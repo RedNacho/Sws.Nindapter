@@ -9,12 +9,12 @@ namespace Sws.Nindapter.Extensions
     public static class BindingToSyntaxExtensions
     {
 
-        public static IBindingToSyntax<T> ThroughDecorator<T>(this IBindingToSyntax<T> bindingToSyntax, Func<T, T> decoratorFactory)
+        public static IAdaptedBindingToSyntax<T> ThroughDecorator<T>(this IBindingToSyntax<T> bindingToSyntax, Func<T, T> decoratorFactory)
         {
             return ThroughAdapter<T, T>(bindingToSyntax, decoratorFactory);
         }
 
-        public static IBindingToSyntax<TAdaptee> ThroughAdapter<TAdaptee, T>(this IBindingToSyntax<T> bindingToSyntax, Func<TAdaptee, T> adapterFactory)
+        public static IAdaptedBindingToSyntax<TAdaptee> ThroughAdapter<TAdaptee, T>(this IBindingToSyntax<T> bindingToSyntax, Func<TAdaptee, T> adapterFactory)
         {
             if (adapterFactory == null)
             {

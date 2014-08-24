@@ -11,7 +11,7 @@ using Ninject.Syntax;
 namespace Sws.Nindapter
 {
 
-    public class AdaptedBindingBuilder<TAdaptee, TAdapted> : BindingBuilder, IBindingToSyntax<TAdaptee>
+    public class AdaptedBindingBuilder<TAdaptee, TAdapted> : BindingBuilder, IAdaptedBindingToSyntax<TAdaptee>
     {
 
         private readonly Func<TAdaptee, TAdapted> _adapterFactory;
@@ -100,6 +100,35 @@ namespace Sws.Nindapter
         public IBindingWhenInNamedWithOrOnSyntax<TAdaptee> ToSelf()
         {
             return To<TAdaptee>();
+        }
+
+        public IBindingWhenInNamedWithOrOnSyntax<TService> ToService<TService>() where TService : TAdaptee
+        {
+            return InternalToService<TService>(typeof(TService));
+        }
+
+        public IBindingWhenInNamedWithOrOnSyntax<TAdaptee> ToService(Type service)
+        {
+            return InternalToService<TAdaptee>(service);
+        }
+
+        public IBindingWhenInNamedWithOrOnSyntax<TAdaptee> ToService()
+        {
+            return InternalToService<TAdaptee>(typeof(TAdaptee));
+        }
+
+        private IBindingWhenInNamedWithOrOnSyntax<TService> InternalToService<TService>(Type service) where TService : TAdaptee
+        {
+            InternalTo<NindapterServiceContainer<TService, TAdapted>>(typeof(NindapterServiceContainer<TService, TAdapted>));
+
+            var providerCallback = BindingConfiguration.ProviderCallback;
+
+            BindingConfiguration.ProviderCallback = context =>
+                _adapterProviderFactory.CreateAdapterProvider(providerCallback(context),
+                    (NindapterServiceContainer<TService, TAdapted> nindapterServiceContainer)
+                        => _adapterFactory(nindapterServiceContainer.Service));
+
+            return GetWhenInNamedWithOrOnSyntax<TService>();
         }
 
         private IBindingWhenInNamedWithOrOnSyntax<TImplementation> AdaptedInternalTo<TImplementation>(Type implementation) where TImplementation : TAdaptee
