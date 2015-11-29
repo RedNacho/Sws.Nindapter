@@ -6,7 +6,7 @@ using Sws.Nindapter.Extensions;
 namespace Sws.Nindapter.Tests
 {
     [TestClass]
-    public class BindingWhenInNamedWithOrSyntaxExtensionTests
+    public class BindingWhenInNamedWithOrOnSyntaxExtensionsTests
     {
         [TestMethod]
         public void WithDecoratorWrapsExistingImplementation()
