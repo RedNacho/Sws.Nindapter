@@ -1,5 +1,3 @@
-[![Build status](https://ci.appveyor.com/api/projects/status/7ygq3na764bu7st8/branch/master?svg=true)](https://ci.appveyor.com/project/RedNacho/sws-nindapter/branch/master)
-
 Sws.Nindapter
 =============
 
